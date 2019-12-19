@@ -35,7 +35,6 @@ class Cache {
     }
     async init(defaultTime) {
         this.cacheList = {};
-        console.log('清除缓存')
         await this.initCache()
         this.timer(defaultTime)
     }
@@ -53,6 +52,7 @@ class Cache {
             clearTimeout(this.time)
         }
         this.time=setTimeout(()=>{
+            console.log('清除缓存')
             this.init();
         },defaultTime?defaultTime:secondDay-time)
     }
