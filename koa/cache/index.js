@@ -8,7 +8,7 @@ class Cache {
         this.init(defaultTime);
     }
     async getData(ctx,next) {
-        const reg=/^\/api\/data\/[0-9]?$/;
+        const reg=/^\/api\/data\/[0-9]+$/;
         const url=ctx.url;
         const type=ctx.method;
         if(!reg.test(url)||type!=='GET'){
